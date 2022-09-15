@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "DancingScript";
+  src: url(fonts/static/DancingScript-Regular.ttf);
+}
+@font-face {
+  font-family: "boldDancingScript";
+  src: url(fonts/static/DancingScript-SemiBold.ttf);
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  /* background: radial-gradient(#000000, #ffffff);
+  background-repeat: no-repeat;
+  background-position: center; */
+  background-image: linear-gradient(
+    to right,
+    rgb(113, 104, 92),
+    rgb(238, 188, 121)
+  );
+}
+
+#quoteDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  width: 50%;
+  padding: 30px;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+#withoutBTN {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  font-family: "DancingScript";
+}
+button {
+  padding: 9px 40px;
+  font-family: "boldDancingScript ";
+  background-color: antiquewhite;
+  font-weight: 900;
+  font-size: 1em;
+  box-shadow: 0 9px rgb(210, 190, 165);
+  border-radius: 5px;
+  /* background-color: ; */
+}
+
+button:active {
+  background-color: antiquewhite;
+  box-shadow: 0 5px rgb(197, 171, 137);
+  transform: translateY(4px);
+}
+
+h4 {
+  text-align: end;
+  font-size: 1.3em;
+  /* font-family: "boldDancingScript "; */
+}
