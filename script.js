@@ -15,5 +15,6 @@ async function getQuote(url) {
 getQuote("https://type.fit/api/quotes");
 
 button.addEventListener("click", function () {
+  // console.log(this.click);
   getQuote(url);
 });
