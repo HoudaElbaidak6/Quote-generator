@@ -2,19 +2,31 @@ let url = "https://type.fit/api/quotes";
 let button = document.querySelector("button");
 let quotePhrase = document.querySelector("h1");
 let authorName = document.querySelector("h4");
+let quotee = [];
 async function getQuote(url) {
-  let resulat1 = await fetch(url);
-  let resulat2 = await resulat1.json();
-  let randomNumber = Math.floor(Math.random() * resulat2.length);
-  let quote = resulat2[randomNumber];
-  console.log(quote);
-  quotePhrase.textContent = `“${quote.text}”`;
-  authorName.textContent = quote.author;
+  try {
+    let quote = await fetch(url);
+    quotee = await quote.json();
+    getRandomQuote();
+  } catch (error) {
+    quotePhrase.textContent = "Erreur de connexion ";
+  }
+}
+
+function getRandomQuote() {
+  let randomNumber = Math.floor(Math.random() * quotee.length);
+  let quote1 = quotee[randomNumber];
+  console.log(quote1);
+  quotePhrase.textContent = `“${quote1.text}”`;
+  /*   if (quote1.author == null) {
+    authorName.textContent = "unknown";
+  } else {
+    authorName.textContent = quote1.author;
+  } */
+
+  authorName.textContent = quote1.author == null ? "Unknown" : quote1.author;
 }
 
 getQuote("https://type.fit/api/quotes");
 
-button.addEventListener("click", function () {
-  // console.log(this.click);
-  getQuote(url);
-});
+button.addEventListener("click", getRandomQuote);
