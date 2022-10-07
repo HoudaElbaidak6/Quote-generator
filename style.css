@@ -56,6 +56,7 @@ button {
   font-size: 1em;
   box-shadow: 0 9px rgb(210, 190, 165);
   border-radius: 5px;
+  cursor: pointer;
   /* background-color: ; */
 }
 
@@ -63,6 +64,7 @@ button:active {
   background-color: antiquewhite;
   box-shadow: 0 5px rgb(197, 171, 137);
   transform: translateY(4px);
+  cursor: pointer;
 }
 
 h4 {
